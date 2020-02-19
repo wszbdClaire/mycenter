@@ -1,0 +1,37 @@
+<div class="blog">
+    
+    <span class="b-title">最新博文</span>
+    <%for(var i=0;i<pageblog.length;i++){%>
+    <div class="b-lists">
+        <div>
+            <% if(i<3){%>
+            <span class="b-lists-ding"><b>【顶】</b></span>
+            <%}else{%>
+            <%}%>
+            <span><b><%=pageblog[i].title%></b></span>
+        </div>
+        <div class="b-lists-item">
+            <div>
+                <span><%=pageblog[i].type%></span>
+                <img src="<%=pageblog[i].img%>" alt="">
+            </div>
+            <div>
+                <p><%=pageblog[i].jianjie%>
+                </p>
+                <div class="b-lists-user">
+                    <img src="<%=pageblog[i].face%>" alt="">
+                    <span><%=new Date(pageblog[i].time).toLocaleDateString()%></span>
+                    <span>【<span><%=pageblog[i].type%></span>】</span>
+                    <a href="/detail?id=<%=pageblog[i].id%>">阅读更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%}%>
+    <ul class="list-inline itemnum">
+        <li class="text-center"><a href="<%=path%>?page=0">1</a></li>
+        <li class="text-center"><a href="<%=path%>?page=1">2</a></li>
+        <li class="text-center"><a href="<%=path%>?page=2">3</a></li>
+        <li class="text-center"><a href="<%=path%>?page=3">4</a></li>
+    </ul>    
+</div>

@@ -1,0 +1,31 @@
+<div class="container-fluid toptitle">
+    <div class="header container">
+        <div class="row">
+            <div class="col-lg-2 title">
+                <span class="logo">
+                    <img src="./image/logo.png" alt="">
+                </span>
+            </div>
+            <div class="col-lg-10">
+                <ul class="list-inline nav text-center">
+                    <%for(var i=0;i<menu.result.length;i++){%>
+                    <% if(i==0){%>
+                    <li class="list-inline-item bgcolor"><a href="<%=menu.result[i].action%>"><%=menu.result[i].name%></a></li>
+                    <%}else if(menu.result[i].child.length!=0){%>
+                        <li class="list-inline-item"><a href="<%=menu.result[i].action%>"><%=menu.result[i].name%></a>
+                            <ul class="items_child">
+                                <%for(var k=0;k<menu.result[i].child.length;k++){%>
+                                 <li class="liitem"><a href="<%=menu.result[i].child[k].action%>"><%=menu.result[i].child[k].name%></a></li>
+                                 <%}%>
+                             </ul>
+                        </li>
+                    <%}else{%>
+                    <li class="list-inline-item"><a href="<%=menu.result[i].action%>"><%=menu.result[i].name%></a></li>
+                    <%}%>
+                    <%}%>
+                    <li class="text-right"><img class="searchbtn" src="icon/bg.png" /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

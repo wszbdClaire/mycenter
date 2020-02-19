@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #65caf1;
+}
+.center{
+    width: 25rem;
+    height: 10rem;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    padding: 1rem 0;
+}
+.center li{
+    list-style: none;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+}
+.userlogin>span{
+    vertical-align: middle;
+}
+.userlogin>input{
+    outline: none;
+    padding: 0.3rem 0 0 0.5rem;
+    vertical-align: middle;
+}
+.rember>span{
+    margin: 0 5rem 0 0;
+    vertical-align: middle;
+    font-size: 0.7rem;
+}
+.rember>input[type=checkbox]{
+    vertical-align: middle;
+}
+.rember>input[type=submit]{
+    background: orange;
+    color: #fff;
+    outline: none;
+    border: 1px solid #000;
+    font-size: 0.8rem;
+    padding: 0.2rem 1.4rem;
+}
+.rember{
+    position: relative;
+    margin-top: 2rem !important;
+}
+.rember>p{
+    position: absolute;
+    left: 8.2rem;
+    top: -1.3rem;
+    color: red;
+    font-size: 0.7rem;
+}
+.admin{
+    width: 100%;
+    height: 100%;
+    padding: 0.6rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+}
+.admin_top{
+    height: 7rem;
+    background: #fff;
+    border-bottom: 1px solid #000;
+}
+.admin_bot{
+    flex: 4;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+}
+.admin_top>img{
+    width: 15rem;
+    margin: 1rem;
+}
+.admin_top>p{
+    float: right;
+}
+.admin_top>p a{
+    margin: 1rem 1rem;
+    font-size: 0.8rem;
+    color:blue;
+    text-decoration: none;
+}
+.admin_top>p a span{
+    margin: 0 0 0 0.5rem;
+    color: red;
+}
+.admin_bot_left{
+    width: 10rem;
+    border-right: 1px solid #000;
+}
+.admin_bot_right{
+    flex: 4;
+    background: #f3f0f0;
+}
+.admin_bot_left li{
+   list-style: none;
+   padding: 0.2rem 0 0.2rem 1.5rem;
+   font-size: 0.8rem;
+}
+.admin_bot_left li:hover{
+    background: #f3f3f3;
+    cursor: pointer;
+}
+#active{
+    background: silver;
+}
+.admin_bot_right{
+    display: flex;
+    flex-direction: row;
+}
+.admin_bot_right>form{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+.admin_bot_right1{
+    flex: 1;
+}
+.admin_bot_right2{
+    flex: 2;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.admin_bot_right3{
+    flex: 2;
+}
+.admin_bot_right2>textarea{
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    outline: none;
+    font-size: 1rem;
+    resize: none;
+}
+.admin_bot_right1 li{
+    list-style: none;
+    padding: 0.2rem 1.2rem;
+}
+.bloghtml{
+    display: none;
+}

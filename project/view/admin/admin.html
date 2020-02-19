@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="./css/admin.css">
+    <script type="text/javascript" src="showdown/showdown-master/showdown-master/dist/showdown.min.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
+</head>
+
+<body>
+    <div class="admin">
+        <div class="admin_top">
+            <img src="./image/logo.png" alt="">
+            <p> <a href="#">欢迎<span><%=user.nickname%></span>登录</a><a href="#">退出</a></p>
+        </div>
+        <div class="admin_bot">
+            <div class="admin_bot_left">
+                <ul>
+                    <li id="active">发表博客</li>
+                    <li>修改个人信息</li>
+                    <li>回复消息</li>
+                </ul>
+            </div>
+            <div class="admin_bot_right">
+                <!-- 博客发表 -->
+                <form method="POST" action="/upload" enctype="multipart/form-data">
+                    <div class="admin_bot_right1">
+                        <ul>
+                            <li>标题：<br><input type="text" name="title"></li>
+                            <li>类别：<br>
+                                <select name="type">
+                                    <option>——请选择——</option>
+                                    <option value="1" selected>个人博客</option>
+                                    <option value="2">CSS3|HTML5</option>
+                                    <option value="3">网站建设</option>
+                                    <option value="4">推荐工具</option>
+                                    <option value="5">设计心得</option>
+                                </select>
+                            </li>
+                            <li>图片：<br>
+                                <input type="file" name="file">
+                            </li>
+                            <li>
+                                描述：<br>
+                                <textarea name="miaoshu"></textarea>
+                            </li>
+                            <li>
+                                <input type="submit" value="发表博客">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="admin_bot_right2">
+                        <textarea id="bloginfo"></textarea>
+                    </div>
+                    <div class="admin_bot_right3">
+
+                    </div>
+                    <textarea name="bloghtml" class="bloghtml"></textarea>
+                    <script>
+                        $("#bloginfo").keypress(function (e) {
+                            if (e.keyCode == 13) {
+                                //创建实例
+                                var converter = new showdown.Converter();
+                                //进行转换
+                                var html = converter.makeHtml($(this).val());
+                                console.log(html);
+                                $(".admin_bot_right3").html(html);
+                                $(".bloghtml").val(html);
+                            }
+                        });
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
